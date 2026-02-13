@@ -17,19 +17,24 @@ class LinkedList:
             self.tail.next = new_node # Sambungkan tail ke node baru
             self.tail = new_node # Update tail ke node baru
 
-    def simpan(self):
+    def display(self):
         temp = self.head
-        list1 = []
         while temp:
-            list1.append(temp)
+            print(temp.data, end=" -> ")
             temp = temp.next
+        print("null")
 
-def reverse(self):
-    temp = self.head
-    reverse_list = []
-    while temp:
-        reverse_list.insert(0, temp)
-        temp = temp.next
+    def reverse(self):
+        prev = None
+        current = self.head
+        self.tail = self.head
+
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        self.head = prev
 
 dll = LinkedList()
 
@@ -37,4 +42,9 @@ masukan = input("Masukkan elemen untuk Linked List: ").split(", ")
 for i in masukan:
     dll.insert_at_end(int(i))
 
-listluar = dll.simpan()
+print("Linked list sebelum dibalik: ", end="")
+dll.display()
+
+dll.reverse()
+print("Linked list setelah dibalik: ", end="")
+dll.display()
