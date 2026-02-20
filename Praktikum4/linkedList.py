@@ -29,7 +29,3 @@ current = head
 while current is not None:
     print(current.data) #menampilkan data pada Node saat ini
     current = current.next #pindah ke Node berikutnya
-    
-#============================================================================
-# Implementasi Dasar: Stack
-#============================================================================
