@@ -14,6 +14,7 @@ def buat_pin(panjang, hasil=""):
         return
     
     for angka in ["0", "1", "2"]: #untuk setiap indeks pada list, akan dipanggil fungsi buat pin yang akan berekursi hingga panjang pin sesuai dengan hasil
+        # cara untuk mencegah adanya angka yang sama muncul berulang adalah menambahkan kondisional pada baris ini (if angka not in hasil:)
         buat_pin(panjang, hasil + angka)
 
 buat_pin(2)
